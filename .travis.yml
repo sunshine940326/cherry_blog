@@ -10,6 +10,8 @@ cache:
   directories:
   - node_modules
 before_install:
+- openssl aes-256-cbc -K $encrypted_017984db1668_key -iv $encrypted_017984db1668_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 118.24.62.205\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 before_script:
@@ -18,4 +20,3 @@ after_success:
 - scp -r stricthostkeychecking=no /. root@118.24.62.205:/home/test/server
 - rsync av -e ssh stricthostkeychecking=no --exclude="node_modules"  b.text root@118.24.62.205:/home/www/server
 - pm2 restart all
-
