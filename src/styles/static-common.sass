@@ -1,0 +1,120 @@
+%text-center
+  text-align: center
+%text-left
+  text-align: left
+%text-right
+  text-align: right
+
+%flex
+  display: flex
+%flex-column
+  @extend %flex
+  flex-direction: column
+%flex-inline
+  display: inline-flex
+
+%flex-wrap
+  flex-wrap: wrap
+%justify-end
+  justify-content: flex-end
+%justify-center
+  justify-content: center
+%align-center
+  align-items: center
+%space-between
+  justify-content: space-between
+%space-around
+  justify-content: space-around
+%flex-align-center
+  @extend %flex, %align-center
+%flex-1
+  flex: 1 0
+
+%border-radius
+  border-radius: 3px
+
+%shadow-bottom
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.05)
+
+%shadow-top
+  box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.05)
+
+%fs12
+  font-size: 12px
+%fs14
+  font-size: 14px
+%fs16
+  font-size: 16px
+%fs18
+  font-size: 18px
+%fs20
+  font-size: 20px
+%fs22
+  font-size: 22px
+%fs24
+  font-size: 24px
+%fwb
+  font-weight: bold
+%lh1
+  line-height: 1
+%hf
+  height: 100%
+%wf
+  width: 100%
+
+%cursor
+  cursor: pointer
+
+%no-select
+  user-select: none
+
+%scroll
+  overflow: scroll
+
+%ellipsis
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+%block
+  display: block
+%inline-block
+  display: inline-block
+// color
+%theme
+  color: #fe5757
+
+%green-primary
+  color: #67c23a
+%orange-primary
+  color: #e6a23c
+%red-primary
+  color: #f56c6c
+%gray-primary
+  color: #909399
+
+%text-primary
+  color: #303133
+%text-regular
+  color: #999999
+%text-secondary
+  color: #909399
+%text-placeholder
+  color: #c0c4cc
+
+%border-light
+  color: #e4e7ed
+
+%border-theme-b
+  border-bottom-color: #409EFF
+
+%background-trans
+  background: transparent
+%background-theme
+  background: #409EFF
+%background-green
+  background: #67c23a
+%background-red
+  background: #f56c6c
+%background-extra-light
+  background: #f2f6fc
