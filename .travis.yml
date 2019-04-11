@@ -14,7 +14,7 @@ before_script:
 
 before_install:
 - openssl aes-256-cbc -K $encrypted_017984db1668_key -iv $encrypted_017984db1668_iv
-  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host 118.24.62.205\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
