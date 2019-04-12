@@ -73,6 +73,8 @@ export default {
   p
     @extend .mb6
     text-align: left
+    img
+      @extend %wf  
   .article-header
     .article-title
       @extend %fs22, .fw5
