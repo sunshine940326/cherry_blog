@@ -9,7 +9,7 @@ import tagList from '@/views/tag/tagList.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes: [
     {
