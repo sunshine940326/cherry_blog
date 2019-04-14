@@ -10,7 +10,7 @@ export default [
     label: '标签',
     value: 'tag',
     icon: 'fa-tags',
-    path: '/tags'
+    path: '/tag'
   },
   {
     label: '关于',
