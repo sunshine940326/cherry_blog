@@ -1,13 +1,13 @@
 export default function canvas () {
-  var canvas = document.getElementById('canvas')
-  var ctx = canvas.getContext('2d')
+  const canvas = document.getElementById('canvas')
+  const ctx = canvas.getContext('2d')
 
-  var cw = canvas.width = window.innerWidth
-  var ch = canvas.height = window.innerHeight
+  const cw = canvas.width = window.innerWidth
+  const ch = canvas.height = window.innerHeight
 
   ctx.fillStyle = '#ECE9E6'
-  var linesNum = 16
-  var linesRy = []
+  const linesNum = 16
+  const linesRy = []
   var requestId = null
 
   function Line (flag) {
@@ -92,7 +92,6 @@ export default function canvas () {
   }
 
   function Init () {
-    changeSize()
     linesRy.length = 0
     for (var i = 0; i < linesNum; i++) {
       var flag = i % 2 === 0 ? 'h' : 'v'
@@ -109,25 +108,18 @@ export default function canvas () {
   setTimeout(function () {
     Init()
     addEventListener('resize', Init, false)
-  }, 0)
-
-  function changeSize () {
-    var canvas = document.getElementById('canvas')
-    canvas.width = document.body.clientWidth
-    canvas.height = document.body.clientHeight
-    console.log(canvas)
-  }
+  }, 15)
 
   function Intersect2lines (l1, l2) {
-    var p1 = l1.a
-    var p2 = l1.b
-    var p3 = l2.a
-    var p4 = l2.b
-    var denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y)
-    var ua = ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) / denominator
-    var ub = ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) / denominator
-    var x = p1.x + ua * (p2.x - p1.x)
-    var y = p1.y + ua * (p2.y - p1.y)
+    const p1 = l1.a
+    const p2 = l1.b
+    const p3 = l2.a
+    const p4 = l2.b
+    const denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y)
+    const ua = ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) / denominator
+    const ub = ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) / denominator
+    const x = p1.x + ua * (p2.x - p1.x)
+    const y = p1.y + ua * (p2.y - p1.y)
     if (ua > 0 && ub > 0) {
       markPoint({
         x: x,
