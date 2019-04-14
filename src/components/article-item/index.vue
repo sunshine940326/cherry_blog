@@ -65,7 +65,7 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
 .article-item
   @extend .p10, .m10
   background: #fff

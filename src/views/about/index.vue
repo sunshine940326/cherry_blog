@@ -27,7 +27,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 .article-item
-  @extend .p10, .m10
+  @extend .p10, .m10, %text-left
   background: #fff
   box-shadow: 0 0 14px #cacbcc
   p
