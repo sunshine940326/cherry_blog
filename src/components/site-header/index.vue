@@ -7,10 +7,10 @@
         <div class="site-nav">
           <ul>
             <li class="nav-item" v-for="nav in config.nav" :key="nav.value">
-              <a :href="nav.path">
+              <router-link :to="nav.path">
                 <i class="fa" :class="nav.icon"></i>
                 {{nav.label}}
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
