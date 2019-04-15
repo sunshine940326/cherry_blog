@@ -16,7 +16,7 @@
           <i class="fa fa-folder-o"></i>
         </span>
         <span class="meta-folder">
-          {{article.tag}}
+          {{tagName}}
         </span>
       </div>
     </div>
@@ -31,11 +31,17 @@
 <script>
 import divideLine from '@/components/divide-line'
 const Marked = require('marked')
+import { _getTagList } from '@/service/tag'
 
 export default {
   name: 'articleItem',
   props: {
     article: [Object, Array]
+  },
+  data() {
+    return {
+      tagName: ''
+    }
   },
   computed: {
     isDetail () {
@@ -59,9 +65,16 @@ export default {
           articleId: id
         }
       })
+    },
+    async fetchTag (){
+      const res = await _getTagList()
+      const tag = res.list.filter(item => item.tagValue === this.article.tag)
+      this.tagName = tag.length > 0 && tag[0].tagName
+      this.total = res.total
     }
   },
   beforeMount () {
+    this.fetchTag()
   }
 }
 </script>
@@ -91,6 +104,8 @@ export default {
       max-width: 100%
       height: auto
       border: 1px solid #ddd
+      img
+        @extend %wf 
   .article-body
     @extend %text-left
 </style>

@@ -54,11 +54,11 @@ export default {
     },
     async fetchTag (){
       const res = await _getTagList()
-      this.tagValue = res.list.filter(item => item.tagName === this.tagName)
+      const tag = res.list.filter(item => item.tagName === this.tagName)
+      this.tagValue = tag[0].tagValue
       this.total = res.total
     },
     handleArticleClick (id){
-      console.log(id)
       this.$router.push({
         name: 'articleDetail',
         params: {
@@ -71,10 +71,9 @@ export default {
       this.fetchList()
     }
   },
-  beforeMount (){
+  async beforeMount (){
     this.tagName = this.$route.params.tagName
-    this.fetchTag()
-    this.fetchList()
+    this.fetchTag().then(this.fetchList)
   }
 }
 </script>
@@ -120,4 +119,6 @@ export default {
       display: inline-block
       @extend .m0
       font-sieze: 14px
+  .tag-title
+    @extend %text-left, .ml3, .pt3
 </style>
