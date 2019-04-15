@@ -32,7 +32,6 @@ export default {
       this.tags = res.list
     },
     handleTag (tagName){
-      console.log('tagName', tagName)
       this.$router.push({
         name: 'tagList',
         params: {
@@ -42,7 +41,6 @@ export default {
     }
   },
   beforeMount () {
-    console.log(222)
     this.fetchArticles()
   }
 }
