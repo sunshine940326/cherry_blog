@@ -78,7 +78,7 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
 .article-item
   @extend .p10, .m10
   background: #fff
@@ -104,8 +104,8 @@ export default {
       max-width: 100%
       height: auto
       border: 1px solid #ddd
-      img
-        @extend %wf 
+    img
+      @extend %wf 
   .article-body
     @extend %text-left
 </style>
