@@ -78,7 +78,7 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
+<style lang="sass">
 .article-item
   @extend .p10, .m10
   background: #fff
@@ -86,8 +86,6 @@ export default {
   p
     @extend .mb6
     text-align: left
-    img
-      @extend %wf  
   .article-header
     .article-title
       @extend %fs22, .fw5
@@ -105,7 +103,9 @@ export default {
       height: auto
       border: 1px solid #ddd
       img
-        @extend %wf 
+        @extend %wf
   .article-body
     @extend %text-left
+  img
+    @extend %wf
 </style>
